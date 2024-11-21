@@ -14,7 +14,7 @@ jobs:
       max-parallel: 20
       fail-fast: false
       matrix:
-        rangeIndex: [1 , 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        rangeIndex: [1]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.12
@@ -29,6 +29,7 @@ jobs:
         python -m pip install -r requirements.txt
         echo "2p8qpuKlYpcsiFEZjaBup7lSWxx" > userid.txt
         echo "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkJseGtPeW9QaWIwMlNzUlpGeHBaN2JlSzJOSEJBMSJ9.eyJ1c2VySWQiOiIycDhxcHVLbFlwY3NpRkVaamFCdXA3bFNXeHgiLCJlbWFpbCI6ImJpbnRhbmVtYWlsQGdtYWlsLmNvbSIsInNjb3BlIjoiVVNFUiIsImlhdCI6MTczMjE1OTAxNSwibmJmIjoxNzMyMTU5MDE1LCJleHAiOjE3NjMyNjMwMTUsImF1ZCI6Ind5bmQtdXNlcnMiLCJpc3MiOiJodHRwczovL3d5bmQuczMuYW1hem9uYXdzLmNvbS9wdWJsaWMifQ.XsdRA3FDT1jT36U3Dh-btZtTsxxX2MQYb21GQUEJXdaIMdDCr-Y-xFN7nHqUKVdiMsMtTrGAUuGh0NKH49-iZO1OypTvMhZCQC0JeogO6tneXWocmyFX4895bv7gpflMhgtHhHST_WHTG6HrZK87Vxq0lO2PwOvtEZv5QRHhsG6s1xSIeY8pUHunAevhR_755a_7zpzj6ZEGSM-rF-M62bcOrWKGmPzIWWljlyijCv6PU0GUHeW_HknwibJlVcbA1S_SJtHMYGfxwQlUQ8ow4a091ygj89A9ykb7ZoYLv4IR2AK4Nd3PvMo86cM0eNgZjUvBG8AG08Dqpkss3dgMfw" > token.txt
-        python main.py
+        cat token.txt
+        ls -la
     - name: done
       run: exit
