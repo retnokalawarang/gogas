@@ -14,7 +14,7 @@ jobs:
       max-parallel: 20
       fail-fast: false
       matrix:
-        rangeIndex: [1]
+        rangeIndex: [1 , 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.12
@@ -25,7 +25,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip wheel setuptools
         python -m pip install -r requirements.txt
-        cat userid.txt
-        ls -la
+        python main.py
     - name: done
       run: exit
